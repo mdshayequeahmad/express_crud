@@ -1,7 +1,7 @@
 const path = require('path');
 
 const getProducts = (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "view", "addProduct.html"));
+    res.sendFile(path.join(__dirname, "..", "view", "product.html"));
 }
 
 const getProductsById = (req, res) => {
@@ -10,7 +10,10 @@ const getProductsById = (req, res) => {
 }
 
 const postProducts = (req, res) => {
-    res.send('New product added!');
+    // res.send('New product added!');
+
+    const data = req.body;
+    res.json({value: data.productName});
 }
 
 const editProducts = (req, res) => {
